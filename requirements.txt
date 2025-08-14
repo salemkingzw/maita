@@ -9,3 +9,4 @@ django-allauth
 whitenoise
 dj-database-url
 python-dotenv
+Pillow
