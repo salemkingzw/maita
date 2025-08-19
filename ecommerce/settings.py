@@ -117,7 +117,7 @@ DATABASES = {
         'NAME': 'maitapostgres',
         'USER': 'salemking',
         'PASSWORD': 'dTCnLhp5K5xOq4Y2e2CppolRxj2q8d5z',
-        'HOST': 'postgresql://salemking:dTCnLhp5K5xOq4Y2e2CppolRxj2q8d5z@dpg-d2f3rojipnbc739mpf10-a.oregon-postgres.render.com/maitapostgres',
+        'HOST': 'dpg-d2f3rojipnbc739mpf10-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
 }
