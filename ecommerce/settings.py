@@ -114,10 +114,10 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'maita_db',
-        'USER': 'postgres',
+        'NAME': 'maitapostgres',
+        'USER': 'salemking',
         'PASSWORD': 'SALEMTAYENGWA23',
-        'HOST': 'localhost',
+        'HOST': 'dTCnLhp5K5xOq4Y2e2CppolRxj2q8d5z',
         'PORT': '5432',
     }
 }
