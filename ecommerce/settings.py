@@ -114,13 +114,16 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'maitapostgres',
-        'USER': 'salemking',
-        'PASSWORD': 'dTCnLhp5K5xOq4Y2e2CppolRxj2q8d5z',
-        'HOST': 'dpg-d2f3rojipnbc739mpf10-a.oregon-postgres.render.com',
+        'NAME': 'maita_db',
+        'USER': 'postgres',
+        'PASSWORD': 'SALEMTAYENGWA23',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
+
+DATABASES['default'] = dj_database_url.parse("postgresql://salemking:mjGqpj05H9LK5e9hxWdrClXQBBzWjVuD@dpg-d2ia3hjipnbc738tsa30-a.oregon-postgres.render.com/maitapostgres_024c")
+
 
 
 # Password validation
