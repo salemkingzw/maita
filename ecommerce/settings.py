@@ -108,7 +108,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse("postgresql://salemking:KO3aeyh3PHmFqslhVlZsV4MQK9CjOYnZ@dpg-d2koddje5dus738456og-a.oregon-postgres.render.com/maitapostgres_e8pb")
+DATABASES['default'] = dj_database_url.parse(config("DATABASE_URL"))
 
 
 
