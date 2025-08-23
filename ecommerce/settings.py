@@ -27,24 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", cast=bool)
 
-ALLOWED_HOSTS = ['192.168.205.81',
-                 '192.168.117.81',
-                 '192.168.122.81',
-                 '192.168.199.81',
-                  '192.168.196.81',
-                  '192.168.184.81',
-                 '192.168.233.81',
-                 '192.168.92.81',
-                 '192.168.201.81',
-                 '192.168.84.81',
-                 '192.168.125.81',
-                 '10.0.2.2',
-                 '192.168.37.81',
-                 '192.168.30.81',
-                  '192.168.137.1',
-                  '192.168.245.81',
-                 '127.0.0.1',
-                'maita.onrender.com']
+ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(",")
 
 
 # Application definition
