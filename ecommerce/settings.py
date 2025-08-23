@@ -123,7 +123,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse("postgresql://salemking:mjGqpj05H9LK5e9hxWdrClXQBBzWjVuD@dpg-d2ia3hjipnbc738tsa30-a.oregon-postgres.render.com/maitapostgres_024c")
+DATABASES['default'] = dj_database_url.parse("postgresql://salemking:KO3aeyh3PHmFqslhVlZsV4MQK9CjOYnZ@dpg-d2koddje5dus738456og-a.oregon-postgres.render.com/maitapostgres_e8pb")
 
 
 
