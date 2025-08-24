@@ -11,3 +11,5 @@ dj-database-url
 python-dotenv
 Pillow
 python-decouple
+cloudinary 
+django-cloudinary-storage
