@@ -40,5 +40,5 @@ urlpatterns = [
     #path('user_subscribe/<str:plan_id>/', user_subscribe, name='user_subscribe'),
     #path('subscription_page/',subscription_page, name='subscription_page'),    
 ] 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#if settings.DEBUG:
+#    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
