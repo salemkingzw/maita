@@ -148,9 +148,9 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": os.getenv("diovsna1y"),
-    "API_KEY": os.getenv("219897465648647"),
-    "API_SECRET": os.getenv("wHN3YZt1gtMIq5AbvMZWwZo4cxI"),
+    "CLOUD_NAME": "diovsna1y",
+    "API_KEY": "219897465648647",
+    "API_SECRET": "wHN3YZt1gtMIq5AbvMZWwZo4cxI",
 }
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
