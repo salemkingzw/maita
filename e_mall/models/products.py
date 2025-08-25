@@ -22,7 +22,7 @@ class Products(models.Model):
         max_length=1000, default='', blank=True, null=True) 
     location = models.ForeignKey(Location, on_delete=models.CASCADE, default='', blank=True, null=True)
     phone_no = models.CharField(max_length=15, default='', blank=True, null=True)
-    image1 = CloudinaryField('image', default='uploads/products/logo.png')
+    image1 = CloudinaryField('image', default='https://res.cloudinary.com/diovsna1y/image/upload/v1756129362/logo_bgsqwu.png')
     #image1 = models.ImageField(upload_to='uploads/products/', default='uploads/products/logo.png')
     image2 = CloudinaryField('image',default='',null=True,blank=True)
     image3 = CloudinaryField('image',default='',null=True,blank=True)
