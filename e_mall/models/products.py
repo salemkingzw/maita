@@ -12,7 +12,6 @@ from django.urls import reverse
 from cloudinary.models import CloudinaryField
 from django.core.files.uploadedfile import InMemoryUploadedFile
 
-
 class Products(models.Model): 
     name = models.CharField(max_length=60)
     seller = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
@@ -23,17 +22,17 @@ class Products(models.Model):
         max_length=1000, default='', blank=True, null=True) 
     location = models.ForeignKey(Location, on_delete=models.CASCADE, default='', blank=True, null=True)
     phone_no = models.CharField(max_length=15, default='', blank=True, null=True)
-    image1 = CloudinaryField('image')
+    image1 = CloudinaryField('image', default='https://res.cloudinary.com/diovsna1y/image/upload/v1756129362/logo_bgsqwu.png')
     #image1 = models.ImageField(upload_to='uploads/products/', default='uploads/products/logo.png')
-    image2 = models.ImageField(upload_to='uploads/products/', default='',null=True,blank=True)
-    image3 = models.ImageField(upload_to='uploads/products/', default='',null=True,blank=True)
-    image4 = models.ImageField(upload_to='uploads/products/', default='',null=True,blank=True)
-    image5 = models.ImageField(upload_to='uploads/products/', default='',null=True,blank=True)
-    image6 = models.ImageField(upload_to='uploads/products/', default='',null=True,blank=True)
-    image7 = models.ImageField(upload_to='uploads/products/', default='',null=True,blank=True)
-    image8 = models.ImageField(upload_to='uploads/products/', default='',null=True,blank=True)
-    image9 = models.ImageField(upload_to='uploads/products/', default='',null=True,blank=True)
-    image10 = models.ImageField(upload_to='uploads/products/', default='',null=True,blank=True)
+    image2 = CloudinaryField('image')
+    image3 = CloudinaryField('image')
+    image4 = CloudinaryField('image')
+    image5 = CloudinaryField('image')
+    image6 = CloudinaryField('image')
+    image7 = CloudinaryField('image')
+    image8 = CloudinaryField('image')
+    image9 = CloudinaryField('image')
+    image10 = CloudinaryField('image')
     international = models.BooleanField(blank=True, null=True, default=False)
         
     def save(self, *args, **kwargs):
@@ -43,32 +42,32 @@ class Products(models.Model):
         if self.image1 and not hasattr(self.image1, 'url'):  # only compress new uploads
             self.image1 = self.compress_image(self.image1)
         
-        if self.image2:
-            self.image2=self.compress_image(self.image2)
+        if self.image2 and not hasattr(self.image2, 'url'):  # only compress new uploads
+            self.image2 = self.compress_image(self.image2)
 
-        if self.image3:
-            self.image3=self.compress_image(self.image3)
+        if self.image3 and not hasattr(self.image3, 'url'):  # only compress new uploads
+            self.image3 = self.compress_image(self.image3)
         
-        if self.image4:
-            self.image4=self.compress_image(self.image4)
+        if self.image4 and not hasattr(self.image4, 'url'):  # only compress new uploads
+            self.image4 = self.compress_image(self.image4)
 
-        if self.image5:
-            self.image5=self.compress_image(self.image5)
+        if self.image5 and not hasattr(self.image5, 'url'):  # only compress new uploads
+            self.image5 = self.compress_image(self.image5)
 
-        if self.image6:
-            self.image6=self.compress_image(self.image6)
+        if self.image6 and not hasattr(self.image6, 'url'):  # only compress new uploads
+            self.image6 = self.compress_image(self.image6)
+        
+        if self.image7 and not hasattr(self.image7, 'url'):  # only compress new uploads
+            self.image7 = self.compress_image(self.image7)
 
-        if self.image7:
-            self.image7=self.compress_image(self.image7)
+        if self.image8 and not hasattr(self.image8, 'url'):  # only compress new uploads
+            self.image8 = self.compress_image(self.image8)
 
-        if self.image8:
-            self.image8=self.compress_image(self.image8)
+        if self.image9 and not hasattr(self.image9, 'url'):  # only compress new uploads
+            self.image9 = self.compress_image(self.image9)
 
-        if self.image9:
-            self.image9=self.compress_image(self.image9)
-
-        if self.image10:
-            self.image10=self.compress_image(self.image10)
+        if self.image10 and not hasattr(self.image10, 'url'):  # only compress new uploads
+            self.image10 = self.compress_image(self.image10)
             
         super().save(*args, **kwargs)   
     
