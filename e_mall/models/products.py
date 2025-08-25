@@ -22,7 +22,7 @@ class Products(models.Model):
         max_length=1000, default='', blank=True, null=True) 
     location = models.ForeignKey(Location, on_delete=models.CASCADE, default='', blank=True, null=True)
     phone_no = models.CharField(max_length=15, default='', blank=True, null=True)
-    image1 = CloudinaryField('image', default='logo_bgsqwu')
+    image1 = CloudinaryField('image', default='',null=True,blank=True)
     #image1 = models.ImageField(upload_to='uploads/products/', default='uploads/products/logo.png')
     image2 = CloudinaryField('image',default='',null=True,blank=True)
     image3 = CloudinaryField('image',default='',null=True,blank=True)
@@ -34,6 +34,12 @@ class Products(models.Model):
     image9 = CloudinaryField('image',default='',null=True,blank=True)
     image10 = CloudinaryField('image',default='',null=True,blank=True)
     international = models.BooleanField(blank=True, null=True, default=False)
+
+    @property
+    def image_url(self):
+        if self.image1:
+            return self.image1.url
+        return "https://res.cloudinary.com/diovsna1y/image/upload/v1756129362/logo_bgsqwu.png"
         
     def save(self, *args, **kwargs):
         if not self.slug:
