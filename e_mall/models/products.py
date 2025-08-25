@@ -10,6 +10,8 @@ from django.core.files.base import ContentFile
 from django.conf import settings 
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
+from django.core.files.uploadedfile import InMemoryUploadedFile
+
 
 class Products(models.Model): 
     name = models.CharField(max_length=60)
@@ -108,7 +110,6 @@ class Products(models.Model):
         return InMemoryUploadedFile(
         im_io, None, image.name, 'image/jpeg', im_io.getbuffer().nbytes, None
         )
-        return new_image
     
     def get_absolute_url(self):
         return reverse('e_mall:products_id', args=[str(self.slug)])
