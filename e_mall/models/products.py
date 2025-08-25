@@ -78,8 +78,8 @@ class Products(models.Model):
         img = Image.open(image)
         img=img.convert('RGB')
         #skip compression if there already is an image in the field, genius        
-        if 'products/' in image.url:
-            return image
+        #if 'products/' in image.url:
+        #    return image
         #rotation and orientation from EXIF data
         try:
             for orientation in ExifTags.TAGS.keys():
