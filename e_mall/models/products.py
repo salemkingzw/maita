@@ -9,6 +9,7 @@ from io import BytesIO
 from django.core.files.base import ContentFile
 from django.conf import settings 
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 
 class Products(models.Model): 
     name = models.CharField(max_length=60)
@@ -20,6 +21,7 @@ class Products(models.Model):
         max_length=1000, default='', blank=True, null=True) 
     location = models.ForeignKey(Location, on_delete=models.CASCADE, default='', blank=True, null=True)
     phone_no = models.CharField(max_length=15, default='', blank=True, null=True)
+    image = CloudinaryField('image')
     image1 = models.ImageField(upload_to='uploads/products/', default='uploads/products/logo.png')
     image2 = models.ImageField(upload_to='uploads/products/', default='',null=True,blank=True)
     image3 = models.ImageField(upload_to='uploads/products/', default='',null=True,blank=True)
