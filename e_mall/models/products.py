@@ -38,9 +38,9 @@ class Products(models.Model):
         if not self.slug:
             self.slug=self.generate_unique_slug()        
         
-        if self.image1:
-            self.image1=self.compress_image(self.image1)        
-
+        if self.image1 and not hasattr(self.image1, 'url'):  # only compress new uploads
+            self.image1 = self.compress_image(self.image1)
+        
         if self.image2:
             self.image2=self.compress_image(self.image2)
 
@@ -104,8 +104,10 @@ class Products(models.Model):
 
         im_io=BytesIO()
         img.save(im_io, 'JPEG', quality=70)
-        new_image=ContentFile(im_io.getvalue(), image.name)
-
+        im_io.seek(0)
+        return InMemoryUploadedFile(
+        im_io, None, image.name, 'image/jpeg', im_io.getbuffer().nbytes, None
+        )
         return new_image
     
     def get_absolute_url(self):
