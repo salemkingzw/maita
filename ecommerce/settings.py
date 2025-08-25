@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 import dj_database_url
 from decouple import config
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -147,13 +150,19 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": "diovsna1y",
-    "API_KEY": "219897465648647",
-    "API_SECRET": "wHN3YZt1gtMIq5AbvMZWwZo4cxI",
-}
+#CLOUDINARY_STORAGE = {
+ #   "CLOUD_NAME": "diovsna1y",
+  #  "API_KEY": "219897465648647",
+   # "API_SECRET": "wHN3YZt1gtMIq5AbvMZWwZo4cxI",
+#}
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
+cloudinary.config(
+    cloud_name="diovsna1y",
+    api_key="219897465648647",
+    api_secret="wHN3YZt1gtMIq5AbvMZWwZo4cxI",
+)
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
