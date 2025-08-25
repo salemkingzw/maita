@@ -161,8 +161,8 @@ os.path.join(BASE_DIR, "static"),
 'static/e_mall/',
 ]
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(DEFAULT_FILE_STORAGE, 'media/e_mall/')
+#MEDIA_URL = 'media/'
+#MEDIA_ROOT = os.path.join(DEFAULT_FILE_STORAGE, 'media/e_mall/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
